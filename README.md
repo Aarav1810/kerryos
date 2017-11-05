@@ -13,10 +13,10 @@ using the NASM Assembler, use the following commands on Unix-like systems:</p>
 <br>
 <code>qemu-system-i386 -fda os.flp</code>
 <br>
-
 <h1>BUILD REQUIREMENTS</h1>
 <br>
 Please install the following before trying to build:
+<br>
 <br>
 <code>sudo apt install nasm</code>
 <br>
