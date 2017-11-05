@@ -11,4 +11,16 @@ using the NASM Assembler, use the following commands on Unix-like systems:</p>
 <br>
 <code>dd status=noxfer conv=notrunc if=loader.bin of=os.flp</code>
 <br>
+<code>qemu-system-i386 -fda os.flp</code>
+<br>
+# BUILD REQUIREMENTS
+Please install the following:
+<br>
+`sudo apt install nasm`
+<br>
+`sudo apt install build-essential`
+<br>
+`sudo apt install qemu`
+<br>
+<br>
 Happy booting!
