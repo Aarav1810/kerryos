@@ -7,7 +7,6 @@ after the bootsector in the 'loader.s' file, get a basic shell with some basic p
 going, and then to eventually move the kernel to a separate file. The pre-built '.flp'
 file of the latest release is provided too, but if you would like to build it yourself
 using the NASM Assembler, use the following commands on Unix-like systems:</p>
-<br>
 <code>nasm -fbin loader.s -o loader.bin</code>
 <br>
 <code>dd status=noxfer conv=notrunc if=loader.bin of=os.flp</code>
