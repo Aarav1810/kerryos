@@ -14,7 +14,6 @@ using the NASM Assembler, use the following commands on Unix-like systems:</p>
 <code>qemu-system-i386 -fda os.flp</code>
 <br>
 <h1>BUILD REQUIREMENTS</h1>
-<br>
 Please run the following before trying to build (on Ubuntu 16.04):
 <br>
 <br>
