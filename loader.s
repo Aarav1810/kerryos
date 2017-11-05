@@ -12,7 +12,8 @@ start:          ; entry symbol for the os
 
         mov ax, 0x07C0          ; set data segment to where we've loaded
         mov ds, ax
-
+        
+        call clear_screen
         mov si, text_string     ; put our string position into SI
         call write_string       ; call our string-printing function
         mov si, text_string_tutorial
@@ -33,6 +34,14 @@ write_string:                   ; output string located in si
     int 10h                     ; call interrupt 10h    
     jmp .repeat                 ; repeat for every char in the string
 .done:                  
+    ret
+
+clear_screen:
+    pusha
+    mov ah, 0x00
+    mov al, 0x03
+    int 0x10
+    popa
     ret
 
 load_kernel:

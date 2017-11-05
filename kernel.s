@@ -5,7 +5,6 @@
 
 start:          ; entry symbol for the kernel
         
-        call clear_screen
         mov si, text_string     ; put our string position into SI
         call write_string       ; call our string-printing function
         mov si, text_string_tutorial
@@ -15,12 +14,6 @@ start:          ; entry symbol for the kernel
 
         text_string db 'Kerry the Kernel version 0.01. Type `help` for a list of commands', 0xA, 0xD
         text_string_tutorial db '>'
-
-clear_screen:
-    mov ah, 0x06
-    mov al, 0
-    int 10h
-    ret       
   
 write_string:                   ; output string located in si
     mov ah, 0xE                 ; the 'print char' function of int 0x10
