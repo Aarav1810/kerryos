@@ -72,4 +72,4 @@ reboot:
     times 510-($-$$) db 0       ; pad boot sector with zeroes
     dw 0xAA55                   ; standard bootsig
 
-;TODO: start writing kernel
+;TODO: start writing kernel after here, and eventually move it to another file
