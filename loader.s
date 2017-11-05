@@ -16,13 +16,13 @@ start:          ; entry symbol for the os
         mov si, text_string     ; put our string position into SI
         call write_string       ; call our string-printing function
         mov si, text_string_tutorial
-        call read_input
+        jmp load_kernel
 
         cli                     ; jump here for an infinite loop
         hlt
 
         text_string db 'Mao Mao Loader 0.01 written by Safal Aryal', 0xA, 0xD
-        text_string_tutorial db 'Press r to reboot or b to continue booting', 0xA, 0xD
+        text_string_tutorial db 'Loading kernel...', 0xA, 0xD
 
 write_string:                   ; output string located in si
     mov ah, 0xE                 ; the 'print char' function of int 0x10
@@ -34,15 +34,6 @@ write_string:                   ; output string located in si
     jmp .repeat                 ; repeat for every char in the string
 .done:                  
     ret
-
-read_input:
-    mov ah, 0x00                ; function 0x00 of int 16h
-    int 16h                     ; call int 16h to read key pressed  
-    mov ah, 0xE                 ; function 0xE of int 10h
-    int 10h                     ; call int 10h to print key pressed
-    cmp al, 'r'                 ; if the key pressed is r, reboot
-    je  reboot
-    jmp load_kernel
 
 load_kernel:
     mov ah, 0x02                ; call function 0x02 of int 13h (read sectors)
