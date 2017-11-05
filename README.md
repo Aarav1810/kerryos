@@ -1,4 +1,4 @@
-<h1>KERRYOS</h1>
+<h1>KerryOS</h1>
 
 <p>First of all, let's clear up the name. 'Kerry' was just a name I thought of randomly.
 This is an operating system which boots up in 16-bit real mode, gives you an option to
@@ -13,7 +13,7 @@ using the NASM Assembler, use the following commands on Unix-like systems:</p>
 <br>
 <code>qemu-system-i386 -fda os.flp</code>
 <br>
-<h1>BUILD REQUIREMENTS</h1>
+<h1>Build Requirements</h1>
 Please run the following before trying to build (on Ubuntu 16.04):
 <br>
 <br>
