@@ -1,4 +1,4 @@
-# KERRYOS
+<h1>KERRYOS</h1>
 
 <p>First of all, let's clear up the name. 'Kerry' was just a name I thought of randomly.
 This is an operating system which boots up in 16-bit real mode, gives you an option to
@@ -13,15 +13,16 @@ using the NASM Assembler, use the following commands on Unix-like systems:</p>
 <br>
 <code>qemu-system-i386 -fda os.flp</code>
 <br>
-# BUILD REQUIREMENTS
+
+<h1>BUILD REQUIREMENTS</h1>
 <br>
-Please install the following:
+Please install the following before trying to build:
 <br>
-`sudo apt install nasm`
+<code>sudo apt install nasm</code>
 <br>
-`sudo apt install build-essential`
+<code>sudo apt install build-essential</code>
 <br>
-`sudo apt install qemu`
+<code>sudo apt install qemu</code>
 <br>
 <br>
 Happy booting!
