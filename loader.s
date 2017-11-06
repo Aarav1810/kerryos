@@ -1,7 +1,7 @@
 ; Mao Mao Loader version 0.01 written by Safal Aryal
 
 
- BITS 16     ; tell nasm we're working in 16 bit real mode
+    BITS 16     ; tell nasm we're working in 16 bit real mode
 
 start:          ; entry symbol for the os          
 
@@ -14,16 +14,15 @@ start:          ; entry symbol for the os
         mov ds, ax
         
         call clear_screen
-        mov si, text_string     ; put our string position into SI
-        call write_string       ; call our string-printing function
-        mov si, text_string_tutorial
+        mov si, loadmsg         ; put our string position into SI
+        call write_string       ; call our string printing routine
+        
         jmp load_kernel
 
         cli                     ; jump here for an infinite loop
         hlt
 
-        text_string db 'Mao Mao Loader 0.01 written by Safal Aryal', 0xA, 0xD
-        text_string_tutorial db 'Loading kernel...', 0xA, 0xD
+        loadmsg db 'Loading KERNEL.BIN...', 0xA, 0xD
 
 write_string:                   ; output string located in si
     mov ah, 0xE                 ; the 'print char' function of int 0x10
@@ -66,7 +65,7 @@ load_kernel:
 
 reboot:
     db 0x0ea
-    dw 0x0000
+    dw 0x0000   
     dw 0xffff
 
     times 510-($-$$) db 0       ; pad boot sector with zeroes
