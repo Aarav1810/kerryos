@@ -22,7 +22,7 @@ start:          ; entry symbol for the os
         cli                     ; jump here for an infinite loop
         hlt
 
-        loadmsg db 'Loading KERNEL.BIN...', 0xA, 0xD
+        loadmsg db 'Loading KERNEL.BIN...', 0xA, 0xD, 0
 
 write_string:                   ; output string located in si
     mov ah, 0xE                 ; the 'print char' function of int 0x10
